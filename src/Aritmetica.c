@@ -33,7 +33,7 @@ int Calculadora(void)
 		{
 			case 1:
 
-				printf("   ingrese 1er operando: ");
+				printf("   ingrese 1er operando: ");//pido el operando A y lo guardo
 				scanf("%f", &a);
 				printf("\n   su numero: %.2f\n", a);
 				flagA=1;
@@ -43,7 +43,7 @@ int Calculadora(void)
 
 			case 2:
 
-				printf("   ingrese 2do operando: ");
+				printf("   ingrese 2do operando: ");//pido el operando B y lo guardo
 				scanf("%f", &b);
 				printf("\n   su numero: %.2f\n", b);
 				flagB=1;
@@ -53,7 +53,7 @@ int Calculadora(void)
 
 			case 3:
 
-				if(!(flagA==0 || flagB == 0))
+				if(!(flagA==0 || flagB == 0))//considero que el usuario no haya ingresado ningun operando
 				{
 					suma = SumarNumeros(a, b);
 					resta = RestarNumero(a, b);
@@ -86,13 +86,13 @@ int Calculadora(void)
 
 			case 4:
 
-				if(!(flag==0))
+				if(!(flag==0))//valido que primero se hayan realizado los calculos en la opcion 3
 				{
 						printf("\nsuma           = (%.2f + %.2f) = %.2f\n", a, b,suma);
 						printf("\nresta          = (%.2f - %.2f) = %.2f\n", a, b, resta);
 						printf("\nmultiplicacion = (%.2f x %.2f) = %.2f\n", a, b, multiplicar);
 
-						if(!(b==0))
+						if(!(b==0))//valido que no se divida por 0
 						{
 							printf("\ndivison        = (%.2f / %.2f) = %.2f\n", a, b, division);
 						}
@@ -102,7 +102,7 @@ int Calculadora(void)
 						}
 
 
-						if(!(a<0))
+						if(!(a<0))//valido que el numero sea mayor de 0 para factorisar
 						{
 							printf("\nel factorial del nro %.0f es: %d\n", a, factorialA);
 						}
@@ -112,7 +112,7 @@ int Calculadora(void)
 						}
 
 
-						if(!(b<0))
+						if(!(b<0))//valido que el numero sea mayor de 0 para factorisar
 						{
 							printf("\nel factorial del nro %.0f es: %d\n", b, factorialB);
 						}
@@ -148,6 +148,8 @@ int Calculadora(void)
 	return 0;
 }
 
+
+//menu devuelve un valor del 1 al 5
 int Menu(void)
 	{
 		int opcion;
@@ -165,6 +167,8 @@ int Menu(void)
 		return opcion;
 	}
 
+
+//suma numeros racionales
 float SumarNumeros(float x, float y)
 	{
 		float suma;
@@ -172,6 +176,8 @@ float SumarNumeros(float x, float y)
 		return suma;
 	}
 
+
+//resta numeros racionales
 float RestarNumero(float x, float y)
 	{
 		float resta;
@@ -179,6 +185,8 @@ float RestarNumero(float x, float y)
 		return resta;
 	}
 
+
+//divide numeros racionales
 float DividirNumero(float x, float y)
 	{
 		float division;
@@ -190,6 +198,8 @@ float DividirNumero(float x, float y)
 
 	}
 
+
+//multiplica numeros racionales
 float MultiplicarNumero(float x, float y)
 
 	{
@@ -198,6 +208,8 @@ float MultiplicarNumero(float x, float y)
 		return multiplicar;
 	}
 
+
+// factorisa numeros enteros
 int   Factorial(int x)
 
 
